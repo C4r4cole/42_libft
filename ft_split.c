@@ -6,7 +6,7 @@
 /*   By: fmoulin <fmoulin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 15:37:10 by fmoulin           #+#    #+#             */
-/*   Updated: 2025/05/05 15:35:06 by fmoulin          ###   ########.fr       */
+/*   Updated: 2025/05/05 17:51:04 by fmoulin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,17 +66,15 @@ void	free_split(char **tab)
 char	**ft_split(char const *s, char c)
 {
 	char	**tab;
-	int		nbr_str;
 	int		i;
 	int		j;
 	int		flag;
 
-	nbr_str = count_str(s, c);
-	tab = malloc(sizeof(char *) * (nbr_str + 1));
+	tab = malloc(sizeof(char *) * (count_str(s, c) + 1));
 	if (!tab)
 		return (NULL);
 	i = 0;
-	while (i < nbr_str)
+	while (i < count_str(s, c))
 	{
 		j = 0;
 		flag = 1;
@@ -93,9 +91,7 @@ char	**ft_split(char const *s, char c)
 					i++;
 					j = j + nbr_chr(s + j, c) - 1;
 					if (!ft_substr(s, j, nbr_chr(s + j, c)))
-					{
 						free_split(tab);
-					}
 				}
 			}
 			j++;
