@@ -6,7 +6,7 @@
 /*   By: fmoulin <fmoulin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 15:37:10 by fmoulin           #+#    #+#             */
-/*   Updated: 2025/05/04 15:24:03 by fmoulin          ###   ########.fr       */
+/*   Updated: 2025/05/05 15:35:06 by fmoulin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	nbr_chr(char const *s, char c)
 	{
 		i++;
 	}
-	return (i);	
+	return (i);
 }
 
 int	count_str(char const *s, char c)
@@ -47,7 +47,7 @@ int	count_str(char const *s, char c)
 		}
 		i++;
 	}
-	return (nbr_str);	
+	return (nbr_str);
 }
 
 void	free_split(char **tab)
@@ -68,18 +68,16 @@ char	**ft_split(char const *s, char c)
 	char	**tab;
 	int		nbr_str;
 	int		i;
-	
+	int		j;
+	int		flag;
+
 	nbr_str = count_str(s, c);
 	tab = malloc(sizeof(char *) * (nbr_str + 1));
 	if (!tab)
-	return (NULL);
+		return (NULL);
 	i = 0;
 	while (i < nbr_str)
 	{
-		char	*tab_str;
-		int	j;
-		int	flag;
-
 		j = 0;
 		flag = 1;
 		while (s[j] != '\0')
@@ -91,11 +89,10 @@ char	**ft_split(char const *s, char c)
 				if (flag == 1)
 				{
 					flag = 0;
-					tab_str = ft_substr(s, j, nbr_chr(s + j, c));
-					tab[i] = tab_str;
+					tab[i] = ft_substr(s, j, nbr_chr(s + j, c));
 					i++;
-					j += nbr_chr(s + j, c) - 1;
-					if (!tab_str)
+					j = j + nbr_chr(s + j, c) - 1;
+					if (!ft_substr(s, j, nbr_chr(s + j, c)))
 					{
 						free_split(tab);
 					}
@@ -107,7 +104,6 @@ char	**ft_split(char const *s, char c)
 	tab[i] = 0;
 	return (tab);
 }
-
 
 // #include <stdio.h>
 
