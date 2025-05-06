@@ -6,7 +6,7 @@
 /*   By: fmoulin <fmoulin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 10:26:24 by fmoulin           #+#    #+#             */
-/*   Updated: 2025/05/06 20:13:38 by fmoulin          ###   ########.fr       */
+/*   Updated: 2025/05/06 20:37:04 by fmoulin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,13 +91,13 @@ char	*ft_itoa(int n)
 	return (fill_tab(tab, n, count, i));
 }
 
-#include <stdio.h>
+// #include <stdio.h>
 
-int	main(void)
-{
-	int	n;
+// int	main(void)
+// {
+// 	int	n;
 
-	n = FT_INT_MIN;
-	printf("%s\n", ft_itoa(n));
-	return (0);
-}
+// 	n = FT_INT_MIN;
+// 	printf("%s\n", ft_itoa(n));
+// 	return (0);
+// }
