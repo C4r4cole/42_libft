@@ -6,7 +6,7 @@
 /*   By: fmoulin <fmoulin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 15:37:10 by fmoulin           #+#    #+#             */
-/*   Updated: 2025/05/05 17:51:04 by fmoulin          ###   ########.fr       */
+/*   Updated: 2025/05/06 11:53:26 by fmoulin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,41 +63,46 @@ void	free_split(char **tab)
 	free(tab);
 }
 
+char	**malloc_substr(char const *s, char c, char **tab, int i)
+{
+	int	flag;
+	int	j;
+
+	i = 0;
+	while (i < count_str(s, c))
+	{
+		j = -1;
+		flag = 1;
+		while (s[j++] != '\0')
+		{
+			if (s[j] == c)
+				flag = 1;
+			else if (s[j] != c && flag == 1)
+			{
+				flag = 0;
+				tab[i++] = ft_substr(s, j, nbr_chr(s + j, c));
+				j = j + nbr_chr(s + j, c) - 1;
+				if (!ft_substr(s, j, nbr_chr(s + j, c)))
+					free_split(tab);
+			}
+		}
+	}
+	tab[i] = 0;
+	return (tab);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**tab;
 	int		i;
 	int		j;
-	int		flag;
 
+	i = 0;
+	j = 0;
 	tab = malloc(sizeof(char *) * (count_str(s, c) + 1));
 	if (!tab)
 		return (NULL);
-	i = 0;
-	while (i < count_str(s, c))
-	{
-		j = 0;
-		flag = 1;
-		while (s[j] != '\0')
-		{
-			if (s[j] == c)
-				flag = 1;
-			else
-			{
-				if (flag == 1)
-				{
-					flag = 0;
-					tab[i] = ft_substr(s, j, nbr_chr(s + j, c));
-					i++;
-					j = j + nbr_chr(s + j, c) - 1;
-					if (!ft_substr(s, j, nbr_chr(s + j, c)))
-						free_split(tab);
-				}
-			}
-			j++;
-		}
-	}
-	tab[i] = 0;
+	tab = malloc_substr(s, c, tab, i);
 	return (tab);
 }
 

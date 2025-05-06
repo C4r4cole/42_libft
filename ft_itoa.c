@@ -6,7 +6,7 @@
 /*   By: fmoulin <fmoulin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 10:26:24 by fmoulin           #+#    #+#             */
-/*   Updated: 2025/05/05 15:48:10 by fmoulin          ###   ########.fr       */
+/*   Updated: 2025/05/06 12:19:19 by fmoulin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,8 @@ int	count_nbr(int n)
 	return (count);
 }
 
-char	*fill_tab(char *tab, int n, int count)
+char	*fill_tab(char *tab, int n, int count, size_t i)
 {
-	size_t	i;
-
 	i = 0;
 	while ((int)i < count)
 	{
@@ -67,7 +65,7 @@ char	*fill_tab(char *tab, int n, int count)
 			tab[i++] = '-';
 		}
 		else
-		i++;
+			i++;
 		while ((unsigned int)n > 9)
 		{
 			tab[count - i++] = ((unsigned int)n % 10) + 48;
@@ -83,12 +81,14 @@ char	*ft_itoa(int n)
 {
 	char	*tab;
 	int		count;
+	int		i;
 
+	i = 0;
 	count = count_nbr(n);
 	tab = malloc(sizeof(char) * (count + 1));
 	if (!tab)
 		return (NULL);
-	return (fill_tab(tab, n, count));
+	return (fill_tab(tab, n, count, i));
 }
 
 // #include <stdio.h>
