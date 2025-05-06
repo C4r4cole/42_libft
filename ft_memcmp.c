@@ -6,7 +6,7 @@
 /*   By: fmoulin <fmoulin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 16:51:08 by fmoulin           #+#    #+#             */
-/*   Updated: 2025/05/02 12:58:08 by fmoulin          ###   ########.fr       */
+/*   Updated: 2025/05/06 19:11:07 by fmoulin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,10 @@ int	ft_memcmp(const void *s1, const void *s2, size_t size)
 	int		res;
 
 	i = 0;
-	while (((unsigned char *)s1)[i] != '\0'
-		&& ((unsigned char *)s1)[i] == ((unsigned char *)s2)[i]
-		&& i < size)
+	if (size == 0)
+		return (0);
+	while (((unsigned char *)s1)[i] == ((unsigned char *)s2)[i]
+		&& i < size - 1)
 	{
 		i++;
 	}
@@ -28,16 +29,14 @@ int	ft_memcmp(const void *s1, const void *s2, size_t size)
 	return (res);
 }
 
-/*
-#include <stdio.h>
+// #include <stdio.h>
 
-int	main(void)
-{
-	char	s1[6] = "hello";
-	char	s2[6] = "helia";
+// int	main(void)
+// {
+// 	char	*s1 = "abcdefghij";
+// 	char	*s2 = "abcdefgxyz";
 
-	printf("%d\n", memcmp(s1, s2, sizeof(s1)));
-	printf("%d\n", ft_memcmp(s1, s2, sizeof(s1)));
-	return (0);
-}
-*/
+// 	printf("%d\n", memcmp(s1, s2, 7));
+// 	printf("%d\n", ft_memcmp(s1, s2, 7));
+// 	return (0);
+// }

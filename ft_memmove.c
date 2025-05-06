@@ -6,7 +6,7 @@
 /*   By: fmoulin <fmoulin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 14:26:57 by fmoulin           #+#    #+#             */
-/*   Updated: 2025/05/02 12:55:30 by fmoulin          ###   ########.fr       */
+/*   Updated: 2025/05/06 16:48:30 by fmoulin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t size)
 {
-	if (dest < src)
-		ft_memcpy(dest, src, sizeof(dest));
-	if (dest > src)
+	if (((unsigned char *)dest) < ((const unsigned char *)src))
+		ft_memcpy(((unsigned char *)dest), ((const unsigned char *)src), size);
+	if (((unsigned char *)dest) > ((const unsigned char *)src))
 	{
-		while (size >= 0)
+		while (size != 0)
 		{
-			size--;
+			--size;
 			((unsigned char *)dest)[size] = ((unsigned char *)src)[size];
 		}
 	}

@@ -6,13 +6,14 @@
 /*   By: fmoulin <fmoulin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 14:58:21 by fmoulin           #+#    #+#             */
-/*   Updated: 2025/05/06 14:56:11 by fmoulin          ###   ########.fr       */
+/*   Updated: 2025/05/06 20:11:22 by fmoulin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_reverse_firstdif(const char *s1, const char *s2, size_t size_i, int flag)
+static int	ft_reverse_firstdif(const char *s1, const char *s2,
+								size_t size_i, int flag)
 {
 	size_t	size_j;
 
@@ -46,10 +47,10 @@ static int	ft_firstdif(const char *s1, const char *s2, size_t size, int flag)
 	size_t	j;
 
 	i = 0;
-	while (s1[i] != '\0' && i < size)
+	while (i < size)
 	{
 		j = 0;
-		while (s2[j] != '\0' && j < size)
+		while (j < size)
 		{
 			if (s1[i] == s2[j])
 			{
@@ -77,10 +78,14 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		flag;
 	char	*result;
 
+	if (!s1 || !set)
+		return (NULL);
 	flag = 0;
 	end = ft_reverse_firstdif(s1, set, ft_strlen(s1), flag);
 	start = ft_firstdif(s1, set, ft_strlen(s1), flag);
 	true_end = (end - start) + 1;
+	if (start >= end)
+		return (ft_substr(s1, 0, 0));
 	result = ft_substr(s1, start, true_end);
 	return (result);
 }
