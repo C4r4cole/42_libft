@@ -6,13 +6,13 @@
 /*   By: fmoulin <fmoulin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 10:26:24 by fmoulin           #+#    #+#             */
-/*   Updated: 2025/05/06 12:19:19 by fmoulin          ###   ########.fr       */
+/*   Updated: 2025/05/06 14:51:55 by fmoulin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	to_positive(int n)
+static int	to_positive(int n)
 {
 	if (n == FT_INT_MIN)
 	{
@@ -24,7 +24,7 @@ int	to_positive(int n)
 	}
 }
 
-int	count_nbr(int n)
+static int	count_nbr(int n)
 {
 	int				count;
 	unsigned int	nb;
@@ -48,7 +48,7 @@ int	count_nbr(int n)
 	return (count);
 }
 
-char	*fill_tab(char *tab, int n, int count, size_t i)
+static char	*fill_tab(char *tab, int n, int count, size_t i)
 {
 	i = 0;
 	while ((int)i < count)

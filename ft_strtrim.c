@@ -6,13 +6,13 @@
 /*   By: fmoulin <fmoulin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 14:58:21 by fmoulin           #+#    #+#             */
-/*   Updated: 2025/05/02 19:01:53 by fmoulin          ###   ########.fr       */
+/*   Updated: 2025/05/06 14:56:11 by fmoulin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_reverse_firstdif(const char *s1, const char *s2, size_t size_i, int flag)
+static int	ft_reverse_firstdif(const char *s1, const char *s2, size_t size_i, int flag)
 {
 	size_t	size_j;
 
@@ -40,7 +40,7 @@ int	ft_reverse_firstdif(const char *s1, const char *s2, size_t size_i, int flag)
 	return (size_i);
 }
 
-int	ft_firstdif(const char *s1, const char *s2, size_t size, int flag)
+static int	ft_firstdif(const char *s1, const char *s2, size_t size, int flag)
 {
 	size_t	i;
 	size_t	j;

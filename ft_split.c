@@ -6,13 +6,13 @@
 /*   By: fmoulin <fmoulin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 15:37:10 by fmoulin           #+#    #+#             */
-/*   Updated: 2025/05/06 11:53:26 by fmoulin          ###   ########.fr       */
+/*   Updated: 2025/05/06 14:54:47 by fmoulin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	nbr_chr(char const *s, char c)
+static int	nbr_chr(char const *s, char c)
 {
 	int	i;
 
@@ -24,7 +24,7 @@ int	nbr_chr(char const *s, char c)
 	return (i);
 }
 
-int	count_str(char const *s, char c)
+static int	count_str(char const *s, char c)
 {
 	int	i;
 	int	nbr_str;
@@ -50,7 +50,7 @@ int	count_str(char const *s, char c)
 	return (nbr_str);
 }
 
-void	free_split(char **tab)
+static void	free_split(char **tab)
 {
 	int	i;
 
@@ -63,7 +63,7 @@ void	free_split(char **tab)
 	free(tab);
 }
 
-char	**malloc_substr(char const *s, char c, char **tab, int i)
+static char	**malloc_substr(char const *s, char c, char **tab, int i)
 {
 	int	flag;
 	int	j;
