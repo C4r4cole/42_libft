@@ -6,15 +6,15 @@
 /*   By: fmoulin <fmoulin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 09:58:11 by fmoulin           #+#    #+#             */
-/*   Updated: 2025/05/06 10:15:52 by fmoulin          ###   ########.fr       */
+/*   Updated: 2025/05/06 10:41:22 by fmoulin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_putnbr_fd(int nb, int fd)
+void	ft_putnbr_fd(int nb, int fd)
 {
-	long    nbr;
+	long	nbr;
 
 	nbr = nb;
 	if (nb == -2147483648)
@@ -31,7 +31,7 @@ void    ft_putnbr_fd(int nb, int fd)
 	{
 		ft_putnbr_fd(nbr / 10, fd);
 	}
-		ft_putchar_fd(nbr % 10 + 48, fd);
+	ft_putchar_fd(nbr % 10 + 48, fd);
 }
 
 // int	main(void)

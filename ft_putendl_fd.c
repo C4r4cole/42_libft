@@ -6,7 +6,7 @@
 /*   By: fmoulin <fmoulin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 09:46:52 by fmoulin           #+#    #+#             */
-/*   Updated: 2025/05/06 09:57:25 by fmoulin          ###   ########.fr       */
+/*   Updated: 2025/05/06 10:40:30 by fmoulin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	ft_putendl_fd(char *s, int fd)
 // int	main(void)
 // {
 // 	char	s[6] = "hello";
-	
+
 // 	ft_putendl_fd(s, 1);
 // 	return (0);
 // }
