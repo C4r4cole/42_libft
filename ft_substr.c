@@ -6,7 +6,7 @@
 /*   By: fmoulin <fmoulin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 18:06:12 by fmoulin           #+#    #+#             */
-/*   Updated: 2025/05/01 13:51:49 by fmoulin          ###   ########.fr       */
+/*   Updated: 2025/05/06 10:26:10 by fmoulin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 
 	if (start > strlen(s))
-		return (NULL);
+		return (ft_strdup(""));
 	new_str = &((char *)s)[start];
 	i = 0;
 	while (new_str[i] != '\0' && i <= len)
