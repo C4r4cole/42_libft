@@ -6,7 +6,7 @@
 /*   By: fmoulin <fmoulin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 14:15:58 by fmoulin           #+#    #+#             */
-/*   Updated: 2025/05/06 18:11:56 by fmoulin          ###   ########.fr       */
+/*   Updated: 2025/05/07 10:31:33 by fmoulin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@ char	*ft_strchr(const char *s, int c)
 	i = 0;
 	while (s[i] != '\0')
 	{
-		if (s[i] == c)
+		if (s[i] == (char)c)
 			return (&((char *)s)[i]);
 		i++;
 	}
-	if (c == '\0')
+	if ((char)c == '\0')
 		return (&((char *)s)[i]);
 	return (0);
 }

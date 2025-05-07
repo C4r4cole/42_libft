@@ -6,7 +6,7 @@
 /*   By: fmoulin <fmoulin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 18:06:12 by fmoulin           #+#    #+#             */
-/*   Updated: 2025/05/06 19:42:55 by fmoulin          ###   ########.fr       */
+/*   Updated: 2025/05/07 12:25:20 by fmoulin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (start > strlen(s))
 		return (ft_strdup(""));
+	if (len > ft_strlen(s) - start)
+		len = ft_strlen(s) - start;
 	new_str = &((char *)s)[start];
 	i = 0;
 	while (i < len)
@@ -29,7 +31,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	alloc_new_str = malloc(sizeof(char) * (i + 1));
 	if (!alloc_new_str)
 		return (NULL);
-	ft_memcpy(alloc_new_str, new_str, len);
+	ft_memmove(alloc_new_str, new_str, len);
 	alloc_new_str[i] = '\0';
 	return (alloc_new_str);
 }
@@ -38,14 +40,15 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 // int	main(void)
 // {
-// 	char	s[52] = "che meraviglia stare con te in una guerra dei bacci";
-// 	unsigned int	start;
-// 	char	*new_str;
-// 	size_t	len;
+// 	char	*str = "bjr";
+// 	unsigned int	start = 0;
+// 	char	*ret = ft_substr(str, start, 3);
+// 	printf("%s\n", ret);
+// 	// size_t	len;
 
-// 	start = 15;
-// 	len = 5;
-// 	new_str = ft_substr(s, start, len);
-// 	printf("%s\n", new_str);
+// 	// start = 15;
+// 	// len = 5;
+// 	// new_str = ft_substr(s, start, len);
+// 	// printf("%s\n", new_str);
 // 	return (0);
 // }

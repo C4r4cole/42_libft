@@ -6,7 +6,7 @@
 /*   By: fmoulin <fmoulin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 10:26:24 by fmoulin           #+#    #+#             */
-/*   Updated: 2025/05/06 20:37:04 by fmoulin          ###   ########.fr       */
+/*   Updated: 2025/05/07 14:05:45 by fmoulin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,38 +42,30 @@ static int	count_nbr(int n)
 		nb = (unsigned int) n;
 	while (nb > 0)
 	{
-		nb = nb / 10;
+		nb = (unsigned int)(nb / 10);
 		count ++;
 	}
 	return (count);
 }
 
-static char	*fill_tab(char *tab, int n, int count, size_t i)
+static char	*fill_tab(char *tab, int n, int count)
 {
-	i = 0;
-	while ((int)i < count)
+	size_t	i;
+
+	i = 1;
+	if (n < 0)
 	{
-		if (n == 0)
-		{
-			tab[i++] = '0';
-			tab[i] = '\0';
-			return (tab);
-		}
-		if (n < 0)
-		{
-			n = to_positive(n);
-			tab[i++] = '-';
-		}
-		else
-			i++;
-		while ((unsigned int)n > 9)
-		{
-			tab[count - i++] = ((unsigned int)n % 10) + 48;
-			n = (unsigned int)n / 10;
-		}
-		tab[count - i++] = ((unsigned int)n % 10) + 48;
-		tab[i] = '\0';
+		n = to_positive(n);
+		tab[0] = '-';
 	}
+	while ((unsigned int)n > 9)
+	{
+		tab[count - i++] = ((unsigned int)n % 10) + 48;
+		n = (unsigned int)n / 10;
+	}
+	if ((unsigned int)n <= 9)
+		tab[count - i++] = ((unsigned int)n % 10) + 48;
+	tab[count] = '\0';
 	return (tab);
 }
 
@@ -81,14 +73,12 @@ char	*ft_itoa(int n)
 {
 	char	*tab;
 	int		count;
-	int		i;
 
-	i = 0;
 	count = count_nbr(n);
 	tab = malloc(sizeof(char) * (count + 1));
 	if (!tab)
 		return (NULL);
-	return (fill_tab(tab, n, count, i));
+	return (fill_tab(tab, n, count));
 }
 
 // #include <stdio.h>
@@ -97,7 +87,7 @@ char	*ft_itoa(int n)
 // {
 // 	int	n;
 
-// 	n = FT_INT_MIN;
-// 	printf("%s\n", ft_itoa(n));
+// 	n = 1000034;
+// 	printf("%s\n", ft_itoa(n));	
 // 	return (0);
 // }
