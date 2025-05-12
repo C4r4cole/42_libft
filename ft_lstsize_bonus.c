@@ -1,26 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: francoismoulin <francoismoulin@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/07 16:03:01 by fmoulin           #+#    #+#             */
-/*   Updated: 2025/05/09 12:46:00 by francoismou      ###   ########.fr       */
+/*   Created: 2025/05/08 12:28:39 by francoismou       #+#    #+#             */
+/*   Updated: 2025/05/08 13:54:41 by francoismou      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+int ft_lstsize(t_list *lst)
 {
-	if(!lst || !new)
-		return;
-	new->next = lst;
-	*lst = new;
+    int i;
+
+    i = 0;
+    while (lst)
+    {
+        lst = lst->next;
+        i++;
+    }
+    return (i);   
 }
 
-// int	main(void)
+// #include <stdio.h>
+
+// int main(void)
 // {
-// 	return (0);
+//     t_list  *elem0;
+//     t_list  elem1;
+//     t_list  elem2;
+//     t_list  elem3;
+
+//     elem0 = &elem1;
+//     elem1.next = &elem2;
+//     elem2.next = &elem3;
+//     elem3.next = 0;
+
+//     printf("%d", ft_lstsize(elem0));
+//     return (0);
 // }

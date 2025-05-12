@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fmoulin <fmoulin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: francoismoulin <francoismoulin@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 09:12:46 by fmoulin           #+#    #+#             */
-/*   Updated: 2025/05/07 16:26:29 by fmoulin          ###   ########.fr       */
+/*   Updated: 2025/05/09 14:42:48 by francoismou      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@
 # include <stddef.h>
 # include <ctype.h>
 
+// Bonus part
+
 typedef struct s_list
 {
 	void			*content;
@@ -29,6 +31,12 @@ typedef struct s_list
 
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **lst, t_list *new);
+int 	ft_lstsize(t_list *lst);
+t_list	*ft_lstlast(t_list *lst);
+void ft_lstadd_back(t_list **lst, t_list *new);
+void ft_lstdelone(t_list *lst, void (*del)(void *));
+
+// Mandatory part
 
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);

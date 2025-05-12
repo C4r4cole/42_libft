@@ -1,26 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: francoismoulin <francoismoulin@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/07 16:03:01 by fmoulin           #+#    #+#             */
-/*   Updated: 2025/05/09 12:46:00 by francoismou      ###   ########.fr       */
+/*   Created: 2025/05/08 13:57:56 by francoismou       #+#    #+#             */
+/*   Updated: 2025/05/09 11:50:42 by francoismou      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+t_list  *ft_lstlast(t_list *lst)
 {
-	if(!lst || !new)
-		return;
-	new->next = lst;
-	*lst = new;
+    while (lst)
+    {
+        lst = lst->next;
+    }
+    return (lst);
+    // return (lst->content); Segfault pourquoi ?
 }
 
-// int	main(void)
+// #include <stdio.h>
+
+// int main(void)
 // {
-// 	return (0);
+//     t_list  *elem0;
+//     t_list  elem1;
+//     t_list  elem2;
+//     t_list  elem3;
+//     char str[6] = "hello";
+
+//     elem3.content = str;
+//     printf("%s\n", (char *)ft_lstlast(elem0));
+//     return (0);
 // }
