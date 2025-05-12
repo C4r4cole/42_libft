@@ -6,7 +6,7 @@
 /*   By: fmoulin <fmoulin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 11:54:00 by francoismou       #+#    #+#             */
-/*   Updated: 2025/05/12 14:35:06 by fmoulin          ###   ########.fr       */
+/*   Updated: 2025/05/12 20:39:14 by fmoulin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	if (!*lst)
 	{
 		*lst = new;
+		return ;
 	}
 	current_elem = *lst;
 	while (current_elem->next != NULL)
@@ -34,17 +35,17 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 
 // int main(void)
 // {
-//     t_list **elem0;
-//     t_list *elem0;
-//     t_list elem1;
-//     t_list elem2;
-//     t_list elem3;
+//     t_list *maillon1 = ft_lstnew("bonjour");
+// 	t_list *maillon2 = ft_lstnew("aurevoir");
+// 	t_list *chaine = NULL;
 
-//     *elem0 = &elem0;
-//     elem0 = &elem1;
-//     elem1.next = &elem2;
-//     elem2.next = &elem3;
-//     elem3.next = NULL;
+// 	ft_lstadd_back(&chaine, maillon1);
+// 	ft_lstadd_back(&chaine, maillon2);
 
+// 	while (chaine != NULL)
+// 	{
+// 		printf("%s\n", (char *)chaine->content);
+// 		chaine = chaine->next;
+// 	}
 //     return (0);
 // }

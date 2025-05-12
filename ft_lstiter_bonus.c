@@ -6,25 +6,25 @@
 /*   By: fmoulin <fmoulin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 14:45:18 by fmoulin           #+#    #+#             */
-/*   Updated: 2025/05/12 15:41:09 by fmoulin          ###   ########.fr       */
+/*   Updated: 2025/05/12 20:18:44 by fmoulin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	f(void *content)
-{
-	int		i;
-	char	*str;
+// void	f(void *content)
+// {
+// 	int		i;
+// 	char	*str;
 
-	str = content;
-	i = 0;
-	while (str[i])
-	{
-		str[i] = str[i] + 13;
-		i++;
-	}
-}
+// 	str = content;
+// 	i = 0;
+// 	while (str[i])
+// 	{
+// 		str[i] = str[i] + 13;
+// 		i++;
+// 	}
+// }
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {

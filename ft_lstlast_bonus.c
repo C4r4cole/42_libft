@@ -6,7 +6,7 @@
 /*   By: fmoulin <fmoulin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 13:57:56 by francoismou       #+#    #+#             */
-/*   Updated: 2025/05/12 14:37:14 by fmoulin          ###   ########.fr       */
+/*   Updated: 2025/05/12 19:47:11 by fmoulin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	while (lst)
+	if (!lst)
+		return (NULL);
+	while (lst->next)
 	{
 		lst = lst->next;
 	}
 	return (lst);
 }
-
-// return (lst->content); Segfault pourquoi ?
 
 // #include <stdio.h>
 
@@ -32,8 +32,14 @@ t_list	*ft_lstlast(t_list *lst)
 //     t_list  elem2;
 //     t_list  elem3;
 //     char str[6] = "hello";
+// 	t_list *result;
 
+// 	elem0 = &elem1;
+// 	elem1.next = &elem2;
+// 	elem2.next = &elem3;
+// 	elem3.next = NULL;
 //     elem3.content = str;
-//     printf("%s\n", (char *)ft_lstlast(elem0));
+// 	result = ft_lstlast(elem0->content);
+//     printf("%s\n", (char *)result->content);
 //     return (0);
 // }

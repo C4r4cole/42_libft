@@ -6,44 +6,53 @@
 /*   By: fmoulin <fmoulin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 15:44:22 by fmoulin           #+#    #+#             */
-/*   Updated: 2025/05/12 17:25:44 by fmoulin          ###   ########.fr       */
+/*   Updated: 2025/05/12 21:11:44 by fmoulin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*f(void *content)
-{
-	int		i;
-	char	*str;
+// void	*f(void *content)
+// {
+// 	int		i;
+// 	char	*str;
 
-	str = content;
-	i = 0;
-	while (str[i])
-	{
-		str[i] = str[i] + 13;
-		i++;
-	}
-	return (str);
-}
+// 	str = content;
+// 	i = 0;
+// 	while (str[i])
+// 	{
+// 		str[i] = str[i] + 13;
+// 		i++;
+// 	}
+// 	return (str);
+// }
 
-void	del(void *content)
-{
-	free(content);
-}
+// void	del(void *content)
+// {
+// 	free(content);
+// }
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*resulted_list;
-	
+	t_list	*new_node;
+	char	*str;
+
+	resulted_list = NULL;
 	while (lst)
 	{
-		resulted_list = malloc(sizeof(t_list));
-		if (!resulted_list)
+		str = ft_strdup(f(lst->content));
+		if (!str)
 			return (NULL);
-		resulted_list->content = ft_strdup(f(lst->content));
-		if (!resulted_list->content)
-				del(resulted_list->content);
+		new_node = ft_lstnew(str);
+		if (!new_node)
+		{
+			free(str);
+			ft_lstclear(&resulted_list, (*del));
+			return (NULL);
+		}
+		new_node->content = str;
+		ft_lstadd_back(&resulted_list, new_node);
 		lst = lst->next;
 	}
 	return (resulted_list);

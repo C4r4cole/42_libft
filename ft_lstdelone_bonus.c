@@ -6,16 +6,16 @@
 /*   By: fmoulin <fmoulin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 14:37:43 by francoismou       #+#    #+#             */
-/*   Updated: 2025/05/12 14:36:21 by fmoulin          ###   ########.fr       */
+/*   Updated: 2025/05/12 20:18:13 by fmoulin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	del(void *content)
-{
-	free(content);
-}
+// void	del(void *content)
+// {
+// 	free(content);
+// }
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
