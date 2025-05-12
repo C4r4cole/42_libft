@@ -3,24 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: francoismoulin <francoismoulin@student.    +#+  +:+       +#+        */
+/*   By: fmoulin <fmoulin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 13:57:56 by francoismou       #+#    #+#             */
-/*   Updated: 2025/05/09 11:50:42 by francoismou      ###   ########.fr       */
+/*   Updated: 2025/05/12 14:37:14 by fmoulin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list  *ft_lstlast(t_list *lst)
+t_list	*ft_lstlast(t_list *lst)
 {
-    while (lst)
-    {
-        lst = lst->next;
-    }
-    return (lst);
-    // return (lst->content); Segfault pourquoi ?
+	while (lst)
+	{
+		lst = lst->next;
+	}
+	return (lst);
 }
+
+// return (lst->content); Segfault pourquoi ?
 
 // #include <stdio.h>
 

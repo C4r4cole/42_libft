@@ -6,7 +6,7 @@
 /*   By: fmoulin <fmoulin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 14:45:21 by fmoulin           #+#    #+#             */
-/*   Updated: 2025/05/07 16:01:44 by fmoulin          ###   ########.fr       */
+/*   Updated: 2025/05/12 14:31:30 by fmoulin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,12 @@
 t_list	*ft_lstnew(void *content)
 {
 	t_list	*new;
-	
+
 	new = malloc(sizeof(t_list));
 	if (!new)
 		return (NULL);
 	new->content = content;
 	new->next = NULL;
-	
 	return (new);
 }
 
@@ -31,7 +30,7 @@ t_list	*ft_lstnew(void *content)
 // {
 // 	t_list	*new_struct;
 // 	char	*str = "hello";
-	
+
 // 	new_struct = ft_lstnew(str);
 // 	printf("%s\n", (char *)new_struct->content);
 // 	return (0);

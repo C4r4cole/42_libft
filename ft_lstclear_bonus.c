@@ -1,50 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
+/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fmoulin <fmoulin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/09 11:54:00 by francoismou       #+#    #+#             */
-/*   Updated: 2025/05/12 14:35:06 by fmoulin          ###   ########.fr       */
+/*   Created: 2025/05/12 13:14:22 by fmoulin           #+#    #+#             */
+/*   Updated: 2025/05/12 14:40:25 by fmoulin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+void	del(void *content)
+{
+	free(content);
+}
+
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*current_elem;
 
-	if (!lst || !new)
-		return ;
-	if (!*lst)
-	{
-		*lst = new;
-	}
 	current_elem = *lst;
-	while (current_elem->next != NULL)
+	if (!current_elem || !del)
+		return (NULL);
+	while (current_elem)
 	{
+		del(current_elem->content);
 		current_elem = current_elem->next;
 	}
-	current_elem->next = new;
+	free(current_elem);
 }
 
 // #include <stdio.h>
 
-// int main(void)
+// int	main(void)
 // {
-//     t_list **elem0;
-//     t_list *elem0;
-//     t_list elem1;
-//     t_list elem2;
-//     t_list elem3;
 
-//     *elem0 = &elem0;
-//     elem0 = &elem1;
-//     elem1.next = &elem2;
-//     elem2.next = &elem3;
-//     elem3.next = NULL;
-
-//     return (0);
+// 	return (0);
 // }
