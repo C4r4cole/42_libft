@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: francoismoulin <francoismoulin@student.    +#+  +:+       +#+         #
+#    By: fmoulin <fmoulin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/26 11:07:46 by fmoulin           #+#    #+#              #
-#    Updated: 2025/05/09 14:44:20 by francoismou      ###   ########.fr        #
+#    Updated: 2025/05/12 17:33:54 by fmoulin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,8 @@ SRCS	= ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c f
 		ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_strtrim.c ft_substr.c ft_tolower.c ft_toupper.c
 
 BONUS_SRCS	= ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstlast_bonus.c \
-			ft_lstadd_back_bonus.c ft_lstdelone_bonus.c
+			ft_lstadd_back_bonus.c ft_lstdelone_bonus.c ft_lstclear_bonus.c ft_lstiter_bonus.c \
+			ft_lstmap_bonus.c
 
 INC = libft.h
 
@@ -31,7 +32,7 @@ CC	= cc
 
 AR 	= ar -rc
 
-RM	= rm -f
+RM	= rm -rf
 
 CFLAGS	= -Wall -Wextra -Werror -g3
 
@@ -40,14 +41,10 @@ CFLAGS	= -Wall -Wextra -Werror -g3
 
 all:		${NAME}
 
-bonus:	${NAME}
-
 ${NAME}:	${OBJS}
 		${AR} -o ${NAME} ${OBJS}
 
-bonus : ${NAME}
-
-${NAME}:	${OBJS} ${BONUS_OBJS}
+bonus:	${OBJS} ${BONUS_OBJS}
 		${AR} -o ${NAME} ${OBJS} ${BONUS_OBJS}
 
 clean:

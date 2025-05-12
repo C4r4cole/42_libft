@@ -6,7 +6,7 @@
 /*   By: fmoulin <fmoulin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 13:14:22 by fmoulin           #+#    #+#             */
-/*   Updated: 2025/05/12 14:40:25 by fmoulin          ###   ########.fr       */
+/*   Updated: 2025/05/12 17:29:20 by fmoulin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 
 	current_elem = *lst;
 	if (!current_elem || !del)
-		return (NULL);
+		return ;
 	while (current_elem)
 	{
 		del(current_elem->content);
