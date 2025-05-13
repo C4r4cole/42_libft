@@ -6,7 +6,7 @@
 /*   By: fmoulin <fmoulin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 14:37:43 by francoismou       #+#    #+#             */
-/*   Updated: 2025/05/13 11:58:46 by fmoulin          ###   ########.fr       */
+/*   Updated: 2025/05/13 12:22:44 by fmoulin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 // int main(void)
 // {
 // 	t_list	*new;
-	
+
 // 	new = ft_lstnew(ft_strdup("ciao"));
 // 	printf("%s\n", (char *)new->content);
 // 	ft_lstdelone(new, del);
