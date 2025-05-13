@@ -6,7 +6,7 @@
 /*   By: fmoulin <fmoulin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 16:03:01 by fmoulin           #+#    #+#             */
-/*   Updated: 2025/05/12 19:22:47 by fmoulin          ###   ########.fr       */
+/*   Updated: 2025/05/13 11:27:39 by fmoulin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,19 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 
 // #include <stdio.h>
 
-// int	main(void)
+// int main(void)
 // {
-// 	t_list	**lst;
-// 	t_list	*new;
+//     t_list *node1 = ft_lstnew("nihao");
+// 	t_list *node2 = ft_lstnew("ciao");
+// 	t_list *chain = NULL;
 
-// 	return (0);
+// 	ft_lstadd_front(&chain, node1);
+// 	ft_lstadd_front(&chain, node2);
+
+// 	while (chain != NULL)
+// 	{
+// 		printf("%s\n", (char *)chain->content);
+// 		chain = chain->next;
+// 	}
+//     return (0);
 // }

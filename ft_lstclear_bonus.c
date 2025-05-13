@@ -6,7 +6,7 @@
 /*   By: fmoulin <fmoulin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 13:14:22 by fmoulin           #+#    #+#             */
-/*   Updated: 2025/05/12 21:10:15 by fmoulin          ###   ########.fr       */
+/*   Updated: 2025/05/13 11:27:44 by fmoulin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,12 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 
 // int main(void)
 // {
-// 	void (*f)(void *) = &del;
-//     t_list *maillon1 = ft_lstnew(ft_strdup("bonjour"));
-// 	t_list *maillon2 = ft_lstnew(ft_strdup("aurevoir"));
-// 	t_list *chaine = NULL;
+//     t_list *node1 = ft_lstnew(ft_strdup("nihao"));
+// 	t_list *node2 = ft_lstnew(ft_strdup("ciao"));
+// 	t_list *chain = NULL;
 
-// 	ft_lstadd_back(&chaine, maillon1);
-// 	ft_lstadd_back(&chaine, maillon2);
-// 	ft_lstclear(&chaine, (*f));
+// 	ft_lstadd_back(&chain, node1);
+// 	ft_lstadd_back(&chain, node2);
+// 	ft_lstclear(&chain, del);
 //     return (0);
 // }
