@@ -6,7 +6,7 @@
 #    By: fmoulin <fmoulin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/26 11:07:46 by fmoulin           #+#    #+#              #
-#    Updated: 2025/05/12 17:33:54 by fmoulin          ###   ########.fr        #
+#    Updated: 2025/05/14 10:00:17 by fmoulin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,20 +32,20 @@ CC	= cc
 
 AR 	= ar -rc
 
-RM	= rm -rf
+RM	= rm -f
 
-CFLAGS	= -Wall -Wextra -Werror -g3
+CFLAGS	= -Wall -Wextra -Werror
 
 .c.o:
-		${CC} ${CFLAGS} -I ${INC} -c $< -o ${<:.c=.o}
+		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 all:		${NAME}
 
 ${NAME}:	${OBJS}
-		${AR} -o ${NAME} ${OBJS}
+		${AR} ${NAME} ${OBJS}
 
 bonus:	${OBJS} ${BONUS_OBJS}
-		${AR} -o ${NAME} ${OBJS} ${BONUS_OBJS}
+		${AR} ${NAME} ${OBJS} ${BONUS_OBJS}
 
 clean:
 		${RM} ${OBJS} ${BONUS_OBJS}

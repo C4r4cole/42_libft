@@ -6,9 +6,11 @@
 /*   By: fmoulin <fmoulin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 14:15:58 by fmoulin           #+#    #+#             */
-/*   Updated: 2025/05/07 10:31:33 by fmoulin          ###   ########.fr       */
+/*   Updated: 2025/05/14 09:19:44 by fmoulin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {

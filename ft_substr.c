@@ -6,7 +6,7 @@
 /*   By: fmoulin <fmoulin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 18:06:12 by fmoulin           #+#    #+#             */
-/*   Updated: 2025/05/07 12:25:20 by fmoulin          ###   ########.fr       */
+/*   Updated: 2025/05/14 09:15:28 by fmoulin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*alloc_new_str;
 	size_t	i;
 
-	if (start > strlen(s))
+	if (start > ft_strlen(s))
 		return (ft_strdup(""));
 	if (len > ft_strlen(s) - start)
 		len = ft_strlen(s) - start;
